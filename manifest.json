@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Custom Photon",
-  "version": "1.2",
+  "version": "1.3",
 
   "description": "Modifies the default photon to have a better display",
 
@@ -13,13 +13,16 @@
   "content_scripts": [
     {
       "matches": ["*://*.photon.bits-goa.ac.in/*"],
-      "js": ["hideUnnecessary.js","changeName.js","style.js"]
+      "js": ["style.js", "ContextMenu/ContextMenu.js"]
     }
   ],
   "web_accessible_resources": [
-    "style.css","jquery.js","icons/folder.png","icons/pdf.png","icons/doc.png",
+    "style.css","icons/folder.png","icons/pdf.png","icons/doc.png",
     "icons/back.png","icons/forward.png","CustomInterface/css.css"
   ],
+  "options_ui": {
+    "page": "options.html"
+  },
   "permissions": [
     "storage",
     "cookies",

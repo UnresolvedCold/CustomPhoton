@@ -15,3 +15,16 @@ To install the plugin in firefox, download the ".xpi" file. Open Firefox "Add-On
 
 "style.js" and "style.css" are the 2 files that cahnges the appearance of the webpage.
 
+## Status
+Next Goal : 
+    Add code to show news
+
+Remaining :
+    Modify Login
+    Add Logout button
+    Debug cources like EMT 
+    Debug Numerical News Forum
+    Switch to toggle b/w default and mod
+    User Data storage
+    Right Mouse click menu
+

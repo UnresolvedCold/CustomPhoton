@@ -27,10 +27,12 @@ a{
 
 }
 
-#inv
+#inv,
+.inv
 {
     visibility: hidden;
     height: 0px;
+    display: none;
 }
 
 #vis

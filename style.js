@@ -1,7 +1,10 @@
 var head = document.getElementsByTagName("head")[0];
+
 //
 //Main Style Sheet
 //
+
+var hiddenFoldersId = ["0","1","2"]; //JSON.parse(localStorage.getItem("hiddenFolders"))
 
 var activeElement = document.getElementsByClassName("type_course depth_3 contains_branch current_branch");
 var allOtherElements = document.getElementsByClassName("type_course depth_3 collapsed contains_branch");
@@ -27,7 +30,7 @@ else
 
 //HTML Content
 var startInsertHTML = `
-<body>
+<body class="container">
 <div id="Tools" class="split left"></div>
 <div id="Folders" class="split right">
 <p class="alwaysOnTop">
@@ -197,22 +200,86 @@ if(activeElement.length+selectedElement.length!==0)
                 var href = allOtherElements[i].innerHTML.split('href="')[1].split('"')[0];
                 var name = allOtherElements[i].innerHTML.split('href="')[1].split('</a>')[0].split('>')[1];
 
-                //change the name here
+                var id = "SchwiftyMod_Root_Folder_"+i;
 
-                innerContent+=
-                `
-                <a href="${href}">
-                <div class="my-fancy-container">
-                    <span class='icon-file-text my-icon'>
-                        <img class="icon" src="${folderIcon}"/>
-                    </span>
-                    <span class="my-text">${name}</span>
-                </div>
-                </a>`;
+                if(!isHidden(id))
+                {
+                    
+                    innerContent+=
+                    `
+                    <a id=${id} href="${href}">
+                    <div class="my-fancy-container">
+                        <span class='icon-file-text my-icon'>
+                            <img class="icon" src="${folderIcon}"/>
+                        </span>
+                        <span class="my-text">${name}</span>
+                    </div>
+                    </a>`;
+                }
+                else
+                {
+                    innerContent+=
+                    `
+                    <a id=${id} href="${href}" class="inv">
+                    <div class="my-fancy-container">
+                        <span class='icon-file-text my-icon'>
+                            <img class="icon" src="${folderIcon}"/>
+                        </span>
+                        <span class="my-text">${name}</span>
+                    </div>
+                    </a>`;
+                }
             }
         }
     }
     var fullHtml = startInsertHTML+innerContent+endInsertHTML;
     var _body = document.getElementsByTagName("body")[0];
     _body.innerHTML=fullHtml;
+}
+
+//Functions
+
+function isHidden(id) {
+   /* if(hiddenFoldersId==null)return false;
+    for(var i=0;i<hiddenFoldersId.length;i++)
+    {
+        if(hiddenFoldersId[i]==id)
+        {
+            return true;
+        }
+    }
+
+    return false;*/
+  
+    var cookie = getCookie(id);
+    
+    if(cookie!=null&&cookie.split("_")[0]=="hidden")
+    {
+        return true;
+    }
+    return false;
+  }
+
+
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
