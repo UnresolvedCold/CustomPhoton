@@ -84,6 +84,7 @@ a
     margin-left: 5px;
     padding-left: 2px;
     padding-right: 2px;
+    vertical-align: middle;
   }
 
   .button_right
@@ -96,6 +97,7 @@ a
     margin-right: 5px;
     padding-left: 2px;
     padding-right: 2px;
+    vertical-align: middle;
   }
 
 
@@ -108,24 +110,28 @@ a
 .context-menu
 {
   z-index: 10;
-  width: 200px;
+  width: auto;
   height: auto;
   box-shadow: 0 0 20px 0 #ccc;
   position: absolute;
   display: none;
   background: #333;
   border-radius: 6px;
+  min-width: 200px;
 }
 
 .context-menu ul{
   list-style: none;
-  padding:  2px 0px 2px 0px;
+  padding:  2px 2px 2px 2px;
+  font-size: 14px;
   }
 
 .context-menu ul li
 {
   color: #eee;
-  padding: 10x 5px 10px 5px;
-  margin: 5px 0px 5px 0px;
+  padding: 5x 5px 5px 5px;
+  margin: 10px 0px 10px 0px;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
 }

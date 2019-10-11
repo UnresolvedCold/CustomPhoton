@@ -11,6 +11,11 @@ var folderMenu = `
 <div id="SchwiftyContextMenu_Folder" class="context-menu">
     <ul>
         <li id="_Hide">Hide</li>
+        <li id="_Rename">Rename</li>
+        <li id="_RenameContainer" class="inv">
+            <input id="_RenameInput" type="text" name="fname" class="inputField">
+            <p id="_RenameSave" class="button_right">Save</p>
+        </li>
     </ul>
 </div>
 `;
@@ -23,6 +28,29 @@ var folderMenu = document.getElementById("SchwiftyContextMenu_Folder");
 
 var currentActiveElement='';
 
+document.getElementById("_RenameSave").addEventListener("click",e=>
+{
+    var newName = document.getElementById('_RenameInput').value;
+    if(newName.length>0)
+    {
+        if(currentActiveElement.split("_").length>=2)
+        {
+            //alert(currentActiveElement);
+            setCookie(currentActiveElement,"visible_"+newName,1800);
+           // alert(_id);
+        }
+    
+        menu.style.display='none';
+
+        window.location.reload(true);
+    }
+});
+
+document.getElementById("_Rename").addEventListener("click",e=>
+{
+    document.getElementById("_RenameContainer").setAttribute("class","vis");
+});
+
 document.getElementById("Folders").addEventListener("contextmenu", e => {
     e.preventDefault();
     console.log(e);
@@ -32,10 +60,14 @@ document.getElementById("Folders").addEventListener("contextmenu", e => {
     folderMenu.style.display='none';
 },true);
 
-window.addEventListener("click",e=>
+document.getElementById("Folders").addEventListener("click",e=>
 {
-    menu.style.display='none';
-})
+    MadeDefault();
+});
+document.getElementById("Tools").addEventListener("click",e=>
+{
+   MadeDefault();
+});
 
 document.getElementById("_PageRefresh").addEventListener("click",e=>
 {
@@ -93,6 +125,16 @@ for(var i = 0 ; i<count;i++)
     },true);
 }
 
+
+function MadeDefault()
+{
+    menu.style.display='none';
+    folderMenu.style.display='none';
+    document.getElementById("_RenameContainer").setAttribute("class","inv");
+}
+
+
+//COmplimentary FUnctions
 
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();

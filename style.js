@@ -204,6 +204,7 @@ if(activeElement.length+selectedElement.length!==0)
 
                 if(!isHidden(id))
                 {
+                    name = getChangedName(id,name);
                     
                     innerContent+=
                     `
@@ -239,18 +240,7 @@ if(activeElement.length+selectedElement.length!==0)
 
 //Functions
 
-function isHidden(id) {
-   /* if(hiddenFoldersId==null)return false;
-    for(var i=0;i<hiddenFoldersId.length;i++)
-    {
-        if(hiddenFoldersId[i]==id)
-        {
-            return true;
-        }
-    }
-
-    return false;*/
-  
+function isHidden(id) {  
     var cookie = getCookie(id);
     
     if(cookie!=null&&cookie.split("_")[0]=="hidden")
@@ -259,6 +249,17 @@ function isHidden(id) {
     }
     return false;
   }
+
+function getChangedName(id,name)
+{
+    var cookie = getCookie(id);
+    
+    if(cookie!=null&&cookie.split("_").length>1)
+    {
+        return cookie.split("_")[1];
+    }
+    return name;
+}
 
 
   function setCookie(cname, cvalue, exdays) {
