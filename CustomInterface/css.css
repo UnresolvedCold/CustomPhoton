@@ -39,18 +39,19 @@ a
     border: 1px solid #ccc;
     border-radius: 6px;
     display: inline-block;
-    margin: 60px;
     padding: 10px;
+    margin: 10px;
     text-align: center;
   }
   
   .my-text {
+  
     display: block;
     font-family: "Courier-new";
-    width: 150px;
-    height: 25px;
+    width: 100px;
+    height: 32px;
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
   }
   
   .my-icon {
@@ -118,6 +119,7 @@ a
   background: #333;
   border-radius: 6px;
   min-width: 200px;
+  overflow: hidden;
 }
 
 .context-menu ul{

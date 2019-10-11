@@ -121,7 +121,7 @@ if(activeElement.length+selectedElement.length!==0)
                         //Modify the page
                         innerContent+=
                         `
-                        <a href="${href}">
+                        <a href="${href}" class="_contentOfFolder">
                         <div class="my-fancy-container">
                             <span class='icon-file-text my-icon'>
                                 <img class="icon" src="${image}"/>
@@ -179,7 +179,7 @@ if(activeElement.length+selectedElement.length!==0)
 
                     innerContent+=
                     `
-                    <a href="${href}">
+                    <a href="${href}" class="_contentOfFolder">
                     <div class="my-fancy-container">
                         <span class='icon-file-text my-icon'>
                             <img class="icon" src="${image}"/>
@@ -208,7 +208,7 @@ if(activeElement.length+selectedElement.length!==0)
                     
                     innerContent+=
                     `
-                    <a id=${id} href="${href}">
+                    <a id=${id} href="${href}" class="_contentOfFolder">
                     <div class="my-fancy-container">
                         <span class='icon-file-text my-icon'>
                             <img class="icon" src="${folderIcon}"/>

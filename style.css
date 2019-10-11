@@ -54,6 +54,7 @@ input {
 
 .inputField
 {
+    background-color: blue;;
     font-size: 12px;
     color: black;
     border-radius: 5px;
@@ -62,4 +63,9 @@ input {
     font-weight: bold;
     padding: 1px 5px 1px 5px;
     vertical-align: middle;
+}
+
+._contentOfFolder
+{
+
 }

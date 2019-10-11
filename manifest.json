@@ -23,6 +23,9 @@
   "options_ui": {
     "page": "options.html"
   },
+  "background": {
+    "scripts": ["jquery.js"]
+  },
   "permissions": [
     "storage",
     "cookies",
