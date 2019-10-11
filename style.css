@@ -1,0 +1,46 @@
+.skiplinks,
+#headerlogo,
+#region-main-wrap,
+#inst2,
+.no-overflow,
+#dock,
+#inst3,
+.f-login-info,
+#inst10,
+#sb-2,
+.skip-block,
+#yui_3_5_1_1_1570735401356_534,
+.breadcrumb,
+.navbar clearfix,
+.tree_item branch canexpand
+{
+    visibility: hidden;
+    height: 0px;
+}
+
+a{
+    text-decoration: none
+}
+
+#hed
+{
+
+}
+
+#inv
+{
+    visibility: hidden;
+    height: 0px;
+}
+
+#vis
+{
+    background-color: aqua;
+    float: right;
+    height: auto;
+    width: auto;
+    margin: 10px;
+    padding: 5px;
+    font-size: 24px;
+    list-style-type: none;
+}

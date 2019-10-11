@@ -1,0 +1,99 @@
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+.split {
+    height: 100%;
+   
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    width: 300px;
+    background-color: #111;
+  }
+  
+  /* Control the right side */
+  .right {
+    left:300px;  
+    right: 0;
+    background-color:#EEE;
+  }
+
+  .icon
+  {
+    src: "../icons/folder.png";
+    height: 50px;
+    width: 50px;
+  }
+
+  .my-fancy-container {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    display: inline-block;
+    margin: 60px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .my-text {
+    display: block;
+    font-family: "Courier-new";
+    width: 150px;
+    height: 25px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  
+  .my-icon {
+      vertical-align: middle;
+      font-size: 40px;
+  }
+
+  #TopicHeadLine
+  {
+    color: black;
+    font-size: 20px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    margin:10px;
+    padding: 2px;
+    text-align: center;
+    overflow: hidden;
+    overflow-x: auto;
+    height: 24px;
+    overflow: hidden;
+    font-weight: bold;
+  }
+
+  .button_left
+  {
+    float: left;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    margin-right: 2px;
+    margin-left: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .button_right
+  {
+    float: right;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    margin-left: 2px;
+    margin-right: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
